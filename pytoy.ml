@@ -1,11 +1,8 @@
-(* Global initialization to make things easier *)
-let () = Py.initialize ()
+let add_toy_python_module () =
+  (* A global module that we expose our OCaml functions through *)
+  let pymod = Py.Import.add_module "toy" in
 
-(* A global module that we expose our OCaml functions through *)
-let pymod = Py.Import.add_module "toy"
-
-(* Expose a toy function for testing *)
-let () =
+  (* Expose a toy function for testing *)
   let good_fun s = String.uppercase_ascii s in
   let good_fun_py py_args =
     Py.String.of_string (good_fun (Py.String.to_string py_args.(0)))
@@ -26,5 +23,6 @@ let load_and_run_py file =
     print_endline "Something..."
 
 let () =
+  add_toy_python_module ();
   load_and_run_py "a.py";
   load_and_run_py "b.py"
