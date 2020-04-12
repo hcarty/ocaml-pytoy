@@ -25,4 +25,6 @@ let load_and_run_py file =
   else
     print_endline "Something..."
 
-let () = load_and_run_py "a.py"
+let () =
+  load_and_run_py "a.py";
+  load_and_run_py "b.py"

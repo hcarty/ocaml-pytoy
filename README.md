@@ -11,4 +11,6 @@ Then the example can be run with dune.
 $ dune exec ./pytoy.exe
 Hey there, how about some APPLES?
 None
+I print out a different message
+None
 ```
