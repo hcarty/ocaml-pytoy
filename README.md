@@ -13,4 +13,6 @@ Hey there, how about some APPLES?
 None
 I print out a different message
 None
+Oh cool, toy.setme is now {'APPLES': 'Set by a.py'}
+None
 ```
